@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './Componets/Header'
 
 function App() {
+  const [counter,setCounter]=useState(0); 
+  const [isAddMode,setIsAddMode]=useState(false); 
+
+
+  function handleClick(event){
+
+    setCounter(counter+1)
+    event.preventDefault();
+  }
+
+  function handleDecrement(event){
+
+    setCounter(counter-1)
+    event.preventDefault();
+  }
+  function handleBack(event){
+
+    setIsAddMode(false)
+    event.preventDefault();
+  }
+  function handleAdd(event){
+
+    setIsAddMode(!isAddMode)
+    event.preventDefault();
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Header isAddMode={isAddMode} onBackPress={handleBack} handleAdd={handleAdd}/>
+    {isAddMode?<div>Add Todo Form</div>:<div>Todo List</div>}
     </div>
   );
 }
-
 export default App;
+
+
+

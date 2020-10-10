@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.counterLabel{
+  margin: 20px;
+  font-size: 30px;
+}
+
+.button{
+  height: 45px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 20;
+  font-weight: 500;
+}
+
+.headerWrapper{
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 10px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
